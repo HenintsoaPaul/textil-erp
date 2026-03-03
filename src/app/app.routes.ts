@@ -5,15 +5,27 @@ import { StockHistoryComponent } from './features/inventory/stock-history/stock-
 import { StockUpdateComponent } from './features/inventory/stock-update/stock-update.component';
 import { QuoteListComponent } from './features/quotation/quote-list/quote-list.component';
 import { QuoteFormComponent } from './features/quotation/quote-form/quote-form.component';
+import { HomeComponent } from './features/home/home.component';
 
 export const routes: Routes = [
-    { path: '', redirectTo: 'inventory', pathMatch: 'full' },
-    { path: 'inventory', component: ProductListComponent },
-    { path: 'inventory/new', component: ProductFormComponent },
-    { path: 'inventory/edit/:id', component: ProductFormComponent },
-    { path: 'inventory/history', component: StockHistoryComponent },
-    { path: 'inventory/update', component: StockUpdateComponent },
-    { path: 'quotations', component: QuoteListComponent },
-    { path: 'quotations/new', component: QuoteFormComponent },
-    { path: 'quotations/edit/:id', component: QuoteFormComponent },
+    {
+        path: 'inventory',
+        children: [
+            { path: '', component: ProductListComponent },
+            { path: 'new', component: ProductFormComponent },
+            { path: 'edit/:id', component: ProductFormComponent },
+            { path: 'history', component: StockHistoryComponent },
+            { path: 'update', component: StockUpdateComponent },
+        ],
+    },
+    {
+        path: 'quotations',
+        children: [
+            { path: '', component: QuoteListComponent },
+            { path: 'new', component: QuoteFormComponent },
+            { path: 'edit/:id', component: QuoteFormComponent },
+        ],
+    },
+    { path: 'home', component: HomeComponent },
+    { path: '', component: HomeComponent },
 ];
