@@ -9,4 +9,9 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 })
 export class App {
   protected readonly title = signal('textil-erp');
+  protected isProfileMenuOpen = signal(false);
+
+  toggleProfileMenu() {
+    this.isProfileMenuOpen.update(v => !v);
+  }
 }
