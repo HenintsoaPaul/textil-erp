@@ -1,5 +1,5 @@
 import { Injectable, signal } from '@angular/core';
-import { Product, StockMovement, Variant } from './models';
+import { Product, StockMovement, Variant } from '../core/models';
 
 @Injectable({
     providedIn: 'root'
