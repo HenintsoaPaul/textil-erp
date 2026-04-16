@@ -8,6 +8,16 @@ import { QuoteFormComponent } from './features/quotation/quote-form/quote-form.c
 import { HomeComponent } from './features/home/home.component';
 
 export const routes: Routes = [
+    // PRODUCTS
+    {
+        path: 'products',
+        children: [
+            { path: '', component: ProductListComponent },
+            { path: 'new', component: ProductFormComponent },
+            { path: 'edit/:id', component: ProductFormComponent },
+        ],
+    },
+    // INVENTORY
     {
         path: 'inventory',
         children: [
@@ -18,6 +28,7 @@ export const routes: Routes = [
             { path: 'update', component: StockUpdateComponent },
         ],
     },
+    // QUOTATIONS
     {
         path: 'quotations',
         children: [
@@ -26,6 +37,8 @@ export const routes: Routes = [
             { path: 'edit/:id', component: QuoteFormComponent },
         ],
     },
-    { path: 'home', component: HomeComponent },
+    // HOME
     { path: '', component: HomeComponent },
+    // NOT FOUND
+    { path: '**', component: HomeComponent },
 ];

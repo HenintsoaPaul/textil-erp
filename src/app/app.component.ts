@@ -1,13 +1,13 @@
 import { Component, signal } from '@angular/core';
-import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
+import { SideBar } from './shared/components/sidebar/sidebar';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, RouterLink, RouterLinkActive],
-  templateUrl: './app.html',
-  styleUrl: './app.css'
+  imports: [RouterOutlet, SideBar],
+  templateUrl: './app.component.html',
 })
-export class App {
+export class AppComponent {
   protected readonly title = signal('textil-erp');
   protected isProfileMenuOpen = signal(false);
 
