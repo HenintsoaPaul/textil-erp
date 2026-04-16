@@ -1,46 +1,47 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { HomeHeaderComponent } from './components/home-header.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, HomeHeaderComponent],
   templateUrl: './home.component.html'
 })
 export class HomeComponent {
   stats = [
-    { 
-      label: 'Active Quotes', 
-      value: '24', 
-      trend: '+12%', 
+    {
+      label: 'Active Quotes',
+      value: '24',
+      trend: '+12%',
       trendUp: true,
       icon: 'quotes',
       color: 'bg-indigo-50 text-indigo-600',
       link: '/quotations'
     },
-    { 
-      label: 'Low Stock Items', 
-      value: '12', 
-      trend: '-5%', 
+    {
+      label: 'Low Stock Items',
+      value: '12',
+      trend: '-5%',
       trendUp: false,
       icon: 'inventory',
       color: 'bg-rose-50 text-rose-600',
       link: '/inventory'
     },
-    { 
-      label: 'Expected Revenue', 
-      value: '$12,450', 
-      trend: '+8%', 
+    {
+      label: 'Expected Revenue',
+      value: '$12,450',
+      trend: '+8%',
       trendUp: true,
       icon: 'revenue',
       color: 'bg-emerald-50 text-emerald-600',
       link: null
     },
-    { 
-      label: 'Production Efficiency', 
-      value: '94%', 
-      trend: '+2.4%', 
+    {
+      label: 'Production Efficiency',
+      value: '94%',
+      trend: '+2.4%',
       trendUp: true,
       icon: 'production',
       color: 'bg-amber-50 text-amber-600',
