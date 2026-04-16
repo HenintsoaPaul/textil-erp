@@ -1,18 +1,45 @@
-# TextilErp
+# Textil ERP
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.12.
+Textil ERP is a modern Enterprise Resource Planning system specifically tailored for textile businesses. 
 
-## Development server
+Built with Angular, it provides a robust, responsive, and intuitive interface for daily business operations.
+
+## Features & Modules
+
+- **Home/Dashboard**: Provides a central overview of metrics and quick actions.
+- **Product Management**: Create, edit, and keep track of your product catalog.
+- **Inventory & Stock Management**: Monitor, update, and review the lifecycle of stock through comprehensive historical auditing.
+- **Quotation System**: Easily generate, review, and manage professional quotations for your clients.
+
+## Architecture
+
+The project is structured into modular feature sets (`src/app/features/*`):
+- [Home](./src/app/features/home/README.md)
+- [Product](./src/app/features/product/README.md)
+- [Inventory](./src/app/features/inventory/README.md)
+- [Quotation](./src/app/features/quotation/README.md)
+
+## Technology Stack
+
+- **Framework**: Angular
+- **Styling**: Tailwind CSS
+- **Testing**: Jasmine & Karma
+
+## Getting Started
+
+### Development server
 
 To start a local development server, run:
 
 ```bash
+npm run dev
+# or
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Once the server is running, open your browser and navigate to `http://localhost:4201/`. The application will automatically reload whenever you modify any of the source files.
 
-## Code scaffolding
+### Code scaffolding
 
 Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
 
@@ -20,13 +47,13 @@ Angular CLI includes powerful code scaffolding tools. To generate a new componen
 ng generate component component-name
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+For a complete list of available schematics, run:
 
 ```bash
 ng generate --help
 ```
 
-## Building
+### Building
 
 To build the project run:
 
@@ -34,26 +61,9 @@ To build the project run:
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+This will compile your project and store the build artifacts in the `dist/` directory.
 
-## Running unit tests
+### Running tests
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- **Unit tests**: Run `ng test` to execute unit tests with Karma.
+- **End-to-End tests**: Run `ng e2e` to execute end-to-end tests.
