@@ -38,7 +38,14 @@ export const routes: Routes = [
         ],
     },
     // HOME
-    { path: '', component: HomeComponent },
+    {
+        path: '',
+        // canActivate: [authGuard],
+        loadComponent: () => import('./features/home/layout/home-layout.component').then(m => m.HomeLayoutComponent),
+        children: [
+            { path: '', loadComponent: () => import('./features/home/home.component').then(m => m.HomeComponent) },
+        ]
+    },
     // NOT FOUND
     { path: '**', component: HomeComponent },
 ];
