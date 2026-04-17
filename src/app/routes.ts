@@ -5,47 +5,60 @@ import { StockHistoryComponent } from './features/inventory/stock-history/stock-
 import { StockUpdateComponent } from './features/inventory/stock-update/stock-update.component';
 import { QuoteListComponent } from './features/quotation/quote-list/quote-list.component';
 import { QuoteFormComponent } from './features/quotation/quote-form/quote-form.component';
-import { HomeComponent } from './features/home/home.component';
+import { LoginComponent } from './features/auth/login/login.component';
+import { RegisterComponent } from './features/auth/register/register.component';
 
 export const routes: Routes = [
-    // PRODUCTS
+    // AUTH
     {
-        path: 'products',
+        path: 'auth',
         children: [
-            { path: '', component: ProductListComponent },
-            { path: 'new', component: ProductFormComponent },
-            { path: 'edit/:id', component: ProductFormComponent },
+            { path: 'login', component: LoginComponent },
+            { path: 'register', component: RegisterComponent },
         ],
     },
-    // INVENTORY
+    // ADMIN
     {
-        path: 'inventory',
-        children: [
-            { path: '', component: ProductListComponent },
-            { path: 'new', component: ProductFormComponent },
-            { path: 'edit/:id', component: ProductFormComponent },
-            { path: 'history', component: StockHistoryComponent },
-            { path: 'update', component: StockUpdateComponent },
-        ],
-    },
-    // QUOTATIONS
-    {
-        path: 'quotations',
-        children: [
-            { path: '', component: QuoteListComponent },
-            { path: 'new', component: QuoteFormComponent },
-            { path: 'edit/:id', component: QuoteFormComponent },
-        ],
-    },
-    // HOME
-    {
-        path: '',
+        path: 'admin',
         // canActivate: [authGuard],
-        loadComponent: () => import('./features/home/layout/home-layout.component').then(m => m.HomeLayoutComponent),
+        loadComponent: () => import('./features/core/layout/admin-layout.component').then(m => m.AdminLayoutComponent),
         children: [
-            { path: '', loadComponent: () => import('./features/home/home.component').then(m => m.HomeComponent) },
+            // HOME
+            {
+                path: '',
+                loadComponent: () => import('./features/home/home.component').then(m => m.HomeComponent)
+            },
+            // PRODUCTS
+            {
+                path: 'products',
+                children: [
+                    { path: '', component: ProductListComponent },
+                    { path: 'new', component: ProductFormComponent },
+                    { path: 'edit/:id', component: ProductFormComponent },
+                ],
+            },
+            // INVENTORY
+            {
+                path: 'inventory',
+                children: [
+                    { path: '', component: ProductListComponent },
+                    { path: 'new', component: ProductFormComponent },
+                    { path: 'edit/:id', component: ProductFormComponent },
+                    { path: 'history', component: StockHistoryComponent },
+                    { path: 'update', component: StockUpdateComponent },
+                ],
+            },
+            // QUOTATIONS
+            {
+                path: 'quotations',
+                children: [
+                    { path: '', component: QuoteListComponent },
+                    { path: 'new', component: QuoteFormComponent },
+                    { path: 'edit/:id', component: QuoteFormComponent },
+                ],
+            },
         ]
     },
     // NOT FOUND
-    { path: '**', component: HomeComponent },
+    { path: '**', loadComponent: () => import('./shared/not-found/not-found.component').then(m => m.NotFoundComponent) },
 ];

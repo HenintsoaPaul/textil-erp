@@ -9,14 +9,14 @@ import { CommonModule } from '@angular/common';
 // import { FooterComponent } from '../../../../shared/components/footer/footer.component';
 
 @Component({
-  selector: 'app-home-layout',
-  templateUrl: './home-layout.component.html',
+  selector: 'app-admin-layout',
+  templateUrl: './admin-layout.component.html',
   standalone: true,
   imports: [RouterLink, RouterLinkActive, RouterOutlet, CommonModule,
     // UserProfileComponent, SnackbarComponent, FooterComponent
   ]
 })
-export class HomeLayoutComponent implements OnInit {
+export class AdminLayoutComponent implements OnInit {
   showProfileModal = false;
 
   appName = 'Textil ERP';
