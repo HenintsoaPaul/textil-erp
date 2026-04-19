@@ -26,3 +26,10 @@ export interface StockMovement {
   reason: string;
   timestamp: Date;
 }
+
+export interface User {
+  id: string;
+  username: string;
+  email: string;
+  role: 'admin' | 'user';
+}
