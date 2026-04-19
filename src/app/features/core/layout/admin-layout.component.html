@@ -127,8 +127,8 @@
             <!-- } -->
           </div>
           <div class="flex flex-col">
-            <span class="text-sm font-semibold text-slate-700 leading-none">userName</span>
-            <span class="text-[10px] text-slate-400 font-medium uppercase tracking-wider">Tenant</span>
+            <span class="text-sm font-semibold text-slate-700 leading-none">{{ currentUser()?.username || 'Guest' }}</span>
+            <span class="text-[10px] text-slate-400 font-medium uppercase tracking-wider">{{ currentUser()?.role || 'User' }}</span>
           </div>
         </div>
       </div>
